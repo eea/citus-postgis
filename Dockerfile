@@ -1,4 +1,4 @@
-FROM postgres:12.1
+FROM postgres:14.2
 ARG VERSION=10.2.4
 LABEL maintainer="Citus Data https://citusdata.com" \
       org.label-schema.name="Citus" \
@@ -13,7 +13,7 @@ ENV CITUS_VERSION ${VERSION}.citus-1
 
 # install Citus and postgis
 RUN apt-get update \
-    && apt-get install -y postgis postgresql-12-postgis-3 \
+    && apt-get install -y postgis postgresql-14-postgis-3 \
     && apt-get install -y --no-install-recommends \
        ca-certificates \
        curl \
