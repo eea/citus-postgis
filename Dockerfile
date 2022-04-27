@@ -27,7 +27,7 @@ RUN install_packages acl ca-certificates curl gzip libbsd0 libbz2-1.0 libc6 libe
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "postgresql" "14.2.0-17" --checksum 9c552ccfc4b90a785dc756733bff073acdb96f13e001d740f3408831e99fcf44
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.14.0-7" --checksum d6280b6f647a62bf6edc74dc8e526bfff63ddd8067dcb8540843f47203d9ccf1
 RUN apt-get update \
-    && apt-get upgrade -y 
+    && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends \
        ca-certificates \
        curl \
