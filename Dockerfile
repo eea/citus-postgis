@@ -28,9 +28,6 @@ RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "postgresql" "14.
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.14.0-7" --checksum d6280b6f647a62bf6edc74dc8e526bfff63ddd8067dcb8540843f47203d9ccf1
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends \
-       ca-certificates \
-       curl \
     && curl -s https://install.citusdata.com/community/deb.sh | bash \
     && apt-get install -y postgresql-$PG_MAJOR-citus-10.2=$CITUS_VERSION \
                           postgresql-$PG_MAJOR-hll=2.16.citus-1 \
