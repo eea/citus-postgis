@@ -1,5 +1,6 @@
 FROM docker.io/bitnami/minideb:buster
-LABEL maintainer "Bitnami <containers@bitnami.com>"/
+ARG VERSION=10.2.4
+LABEL maintainer "Bitnami <containers@bitnami.com>"\
     "Citus Data https://citusdata.com" \
       org.label-schema.name="Citus" \
       org.label-schema.description="Scalable PostgreSQL for multi-tenant and real-time workloads" \
@@ -16,7 +17,7 @@ ENV HOME="/" \
 
 ARG EXTRA_LOCALES=""
 ARG WITH_ALL_LOCALES="no"
-ARG VERSION=10.2.4
+
 
 ENV CITUS_VERSION ${VERSION}.citus-1
 
